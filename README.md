@@ -8,3 +8,4 @@ Electronical components of the Kastl
 * inserted programming interface
 * change 12V -> 5V Converter
 * check values of components (R and C)
+* status LED
