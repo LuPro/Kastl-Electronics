@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.5.0">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -65,9 +65,9 @@
 </packages>
 <symbols>
 <symbol name="STEPDOWN_CONV">
-<pin name="VOUT" x="10.16" y="0" length="middle" rot="R180"/>
-<pin name="VIN" x="-10.16" y="2.54" length="middle"/>
-<pin name="GND" x="-10.16" y="-2.54" length="middle"/>
+<pin name="VOUT" x="10.16" y="0" visible="pin" length="middle" rot="R180"/>
+<pin name="VIN" x="-10.16" y="2.54" visible="pin" length="middle"/>
+<pin name="GND" x="-10.16" y="-2.54" visible="pin" length="middle"/>
 <wire x1="-5.08" y1="5.08" x2="-5.08" y2="-5.08" width="0.254" layer="94"/>
 <wire x1="-5.08" y1="-5.08" x2="5.08" y2="-5.08" width="0.254" layer="94"/>
 <wire x1="5.08" y1="-5.08" x2="5.08" y2="5.08" width="0.254" layer="94"/>
