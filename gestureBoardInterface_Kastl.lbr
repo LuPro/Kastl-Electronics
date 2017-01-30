@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.5.0">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -70,14 +70,23 @@
 <wire x1="1.5875" y1="2.54" x2="1.5875" y2="1.905" width="0.127" layer="17"/>
 <wire x1="1.905" y1="2.2225" x2="1.27" y2="2.2225" width="0.127" layer="17"/>
 </package>
+<package name="INTERFACE_AND_POWER_CONN">
+<pad name="GPIN6" x="0" y="0" drill="0.8" shape="long"/>
+<pad name="GPIN3" x="0" y="2.54" drill="0.8" shape="long"/>
+<pad name="GPIN2" x="0" y="5.08" drill="0.8" shape="long"/>
+<pad name="GPIN1" x="0" y="7.62" drill="0.8" shape="long"/>
+<pad name="GPIN7" x="0" y="-2.54" drill="0.8" shape="long"/>
+<pad name="VCC_3V3" x="0" y="-5.08" drill="0.8" shape="long"/>
+<pad name="GND" x="0" y="-7.62" drill="0.8" shape="long"/>
+</package>
 </packages>
 <symbols>
 <symbol name="GESTUREBOARD_INTERFACE">
-<pin name="GPIN3" x="-5.08" y="0" length="middle"/>
-<pin name="GPIN2" x="-5.08" y="2.54" length="middle"/>
-<pin name="GPIN1" x="-5.08" y="5.08" length="middle"/>
-<pin name="GPIN6" x="-5.08" y="-2.54" length="middle"/>
-<pin name="GPIN7" x="-5.08" y="-5.08" length="middle"/>
+<pin name="GPIN3" x="-5.08" y="0" visible="pin" length="middle"/>
+<pin name="GPIN2" x="-5.08" y="2.54" visible="pin" length="middle"/>
+<pin name="GPIN1" x="-5.08" y="5.08" visible="pin" length="middle"/>
+<pin name="GPIN6" x="-5.08" y="-2.54" visible="pin" length="middle"/>
+<pin name="GPIN7" x="-5.08" y="-5.08" visible="pin" length="middle"/>
 <wire x1="0" y1="7.62" x2="0" y2="-7.62" width="0.254" layer="94"/>
 <wire x1="0" y1="-7.62" x2="12.7" y2="-7.62" width="0.254" layer="94"/>
 <wire x1="12.7" y1="-7.62" x2="12.7" y2="7.62" width="0.254" layer="94"/>
@@ -86,13 +95,27 @@
 <text x="15.24" y="-5.08" size="1.27" layer="96">&gt;VALUE</text>
 </symbol>
 <symbol name="GESTUREBOARD_POWER">
-<pin name="VCC3_3" x="-7.62" y="2.54" length="middle"/>
-<pin name="GND" x="-7.62" y="-2.54" length="middle"/>
+<pin name="VCC3_3" x="-7.62" y="2.54" visible="pin" length="middle"/>
+<pin name="GND" x="-7.62" y="-2.54" visible="pin" length="middle"/>
 <wire x1="-2.54" y1="5.08" x2="-2.54" y2="-5.08" width="0.254" layer="94"/>
 <wire x1="-2.54" y1="-5.08" x2="10.16" y2="-5.08" width="0.254" layer="94"/>
 <wire x1="10.16" y1="-5.08" x2="10.16" y2="5.08" width="0.254" layer="94"/>
 <wire x1="10.16" y1="5.08" x2="-2.54" y2="5.08" width="0.254" layer="94"/>
 <text x="12.7" y="2.54" size="1.27" layer="95">&gt;Name</text>
+</symbol>
+<symbol name="GESTUREBOARD">
+<pin name="GPIN1" x="-15.24" y="5.08" visible="pin" length="middle"/>
+<pin name="GPIN2" x="-15.24" y="2.54" visible="pin" length="middle"/>
+<pin name="GPIN3" x="-15.24" y="0" visible="pin" length="middle"/>
+<pin name="GPIN6" x="-15.24" y="-2.54" visible="pin" length="middle"/>
+<pin name="GPIN7" x="-15.24" y="-5.08" visible="pin" length="middle"/>
+<pin name="VCC_3V3" x="2.54" y="17.78" visible="pin" length="middle" rot="R270"/>
+<pin name="GND" x="2.54" y="-17.78" visible="pin" length="middle" rot="R90"/>
+<wire x1="-10.16" y1="12.7" x2="-10.16" y2="-12.7" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="-12.7" x2="7.62" y2="-12.7" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-12.7" x2="7.62" y2="12.7" width="0.254" layer="94"/>
+<wire x1="7.62" y1="12.7" x2="-10.16" y2="12.7" width="0.254" layer="94"/>
+<text x="10.16" y="7.62" size="1.27" layer="95">&gt;Name</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -124,6 +147,27 @@
 <connects>
 <connect gate="G$1" pin="GND" pad="GND"/>
 <connect gate="G$1" pin="VCC3_3" pad="VCC3_3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="GESTUREBOARD">
+<gates>
+<gate name="G$1" symbol="GESTUREBOARD" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="INTERFACE_AND_POWER_CONN">
+<connects>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="GPIN1" pad="GPIN1"/>
+<connect gate="G$1" pin="GPIN2" pad="GPIN2"/>
+<connect gate="G$1" pin="GPIN3" pad="GPIN3"/>
+<connect gate="G$1" pin="GPIN6" pad="GPIN6"/>
+<connect gate="G$1" pin="GPIN7" pad="GPIN7"/>
+<connect gate="G$1" pin="VCC_3V3" pad="VCC_3V3"/>
 </connects>
 <technologies>
 <technology name=""/>
