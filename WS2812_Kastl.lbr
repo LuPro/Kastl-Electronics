@@ -70,15 +70,15 @@
 </packages>
 <symbols>
 <symbol name="WS2812">
-<pin name="VCC12" x="-5.08" y="2.54" length="middle"/>
-<pin name="GND" x="-5.08" y="0" length="middle"/>
-<pin name="DATA" x="-5.08" y="-2.54" length="middle"/>
-<wire x1="0" y1="5.08" x2="0" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="0" y1="-5.08" x2="12.7" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="12.7" y1="-5.08" x2="12.7" y2="5.08" width="0.254" layer="94"/>
-<wire x1="12.7" y1="5.08" x2="0" y2="5.08" width="0.254" layer="94"/>
-<text x="15.24" y="2.54" size="1.27" layer="95">&gt;NAME</text>
-<text x="15.24" y="-2.54" size="1.27" layer="96">&gt;VALUE</text>
+<pin name="VCC12" x="-10.16" y="2.54" visible="pin" length="middle"/>
+<pin name="GND" x="-10.16" y="-2.54" visible="pin" length="middle"/>
+<pin name="DATA" x="12.7" y="0" visible="pin" length="middle" rot="R180"/>
+<wire x1="-5.08" y1="5.08" x2="-5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-5.08" x2="7.62" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-5.08" x2="7.62" y2="5.08" width="0.254" layer="94"/>
+<wire x1="7.62" y1="5.08" x2="-5.08" y2="5.08" width="0.254" layer="94"/>
+<text x="-5.08" y="7.62" size="1.27" layer="95">&gt;NAME</text>
+<text x="-5.08" y="-7.62" size="1.27" layer="96">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
