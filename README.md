@@ -5,5 +5,6 @@ Electronical components of the Kastl
 
 * do pcb layout
 * add inserted programming interface
-* change 12V -> 5V Converter
+* add current limiter (JFET curcuit?)
+* add oscillator
 * check values of components (R and C)
