@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.4.0">
+<eagle version="6.5.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -140,10 +140,10 @@
 </layers>
 <board>
 <plain>
-<wire x1="-0.24" y1="-0.08" x2="99.76" y2="-0.08" width="0" layer="20"/>
-<wire x1="99.76" y1="-0.08" x2="100" y2="80" width="0" layer="20"/>
+<wire x1="0" y1="0" x2="100" y2="0" width="0" layer="20"/>
+<wire x1="100" y1="0" x2="100" y2="80" width="0" layer="20"/>
 <wire x1="100" y1="80" x2="0" y2="80" width="0" layer="20"/>
-<wire x1="0" y1="80" x2="-0.24" y2="-0.08" width="0" layer="20"/>
+<wire x1="0" y1="80" x2="0" y2="0" width="0" layer="20"/>
 </plain>
 <libraries>
 <library name="SparkFun-DigitalIC">
@@ -480,9 +480,6 @@ design rules under a new name.</description>
 <autorouter>
 <pass name="Default">
 <param name="RoutingGrid" value="50mil"/>
-<param name="AutoGrid" value="1"/>
-<param name="Efforts" value="0"/>
-<param name="TopRouterVariant" value="1"/>
 <param name="tpViaShape" value="round"/>
 <param name="PrefDir.1" value="|"/>
 <param name="PrefDir.2" value="0"/>
@@ -574,99 +571,91 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="ATMEGA328P" library="SparkFun-DigitalIC" package="DIL28-3" value="ATMEGA328P_PDIP" x="49.53" y="46.99"/>
-<element name="MOBILE_OUT" library="SparkFun-Connectors" package="USB_JUMPER" value="USB_JUMPER" x="62.23" y="70.07" rot="MR180"/>
-<element name="PW_REG_5V" library="SparkFun-Connectors" package="USB_JUMPER" value="USB_JUMPER" x="50.88" y="69.84" rot="R180"/>
-<element name="HC-06_BLUETOOTH" library="Bluetooth_HC-06" package="BT_BOARD_FOOTPRINT_STANDING" value="BLUETOOTH_BOARDSTANDING" x="32.24" y="21.66" rot="R270"/>
-<element name="C1" library="htl3r-discrete" package="C2.5-2" value="" x="29.72" y="36.62" rot="R90"/>
-<element name="C2" library="htl3r-discrete" package="C2.5-2" value="" x="24.28" y="45.3" rot="R270"/>
-<element name="R1" library="htl3r-discrete" package="R-2,5" value="100k" x="36.6" y="18.82" rot="MR180"/>
-<element name="R2" library="htl3r-discrete" package="R-2,5" value="220k" x="30.32" y="18.9"/>
-<element name="C3" library="htl3r-discrete" package="C2.5-2" value="" x="50.84" y="54.96" rot="R90"/>
-<element name="C4" library="htl3r-discrete" package="C2.5-2" value="" x="53.92" y="54.96" rot="R90"/>
-<element name="R3" library="htl3r-discrete" package="R-2,5" value="10k" x="36.08" y="32.88" rot="MR90"/>
-<element name="C5" library="htl3r-discrete" package="C2.5-2" value="" x="47.12" y="56.08"/>
-<element name="LED1" library="htl3r-discrete" package="LED5MM" value="" x="44.82" y="62.02"/>
-<element name="R4" library="htl3r-discrete" package="R-2,5" value="2k2" x="38.66" y="58.02" rot="R180"/>
-<element name="12V_PSU" library="PowerConnector" package="2PIN_CONN" value="PWR_CONNECTOR" x="73.48" y="47.88" rot="R180"/>
-<element name="5V_3V3_CONV" library="5V3_3V_stepdown" package="3P_PWR_REG" value="STEPDOWN_5V-3_3V" x="21.16" y="46.12"/>
-<element name="GESTURE_POWER" library="gestureBoardInterface_Kastl" package="POWER_CONNECTOR" value="GESTUREBOARD_POWER" x="54.16" y="24.96"/>
-<element name="LEDSTRIP_TOP" library="WS2812_Kastl" package="WS2812_JUMPER" value="" x="61.96" y="28.94" rot="R270"/>
-<element name="LEDSTRIP_MID" library="WS2812_Kastl" package="WS2812_JUMPER" value="" x="65.04" y="33.02" rot="R270"/>
-<element name="LEDSTRIP_DRW" library="WS2812_Kastl" package="WS2812_JUMPER" value="" x="67.58" y="38.1" rot="R270"/>
-<element name="Y1" library="SparkFun-FreqCtrl" package="CRYSTAL-SMD-3.2X1.5MM" value="32.768kHz" x="38.64" y="69.3" rot="R270">
-<attribute name="PROD_ID" value="XTAL-13062" x="38.64" y="69.3" size="1.778" layer="27" rot="R270" display="off"/>
+<element name="ATMEGA328P" library="SparkFun-DigitalIC" package="DIL28-3" value="ATMEGA328P_PDIP" x="21.59" y="34.29"/>
+<element name="MOBILE_OUT" library="SparkFun-Connectors" package="USB_JUMPER" value="USB_JUMPER" x="49.53" y="39.37"/>
+<element name="PW_REG_5V" library="SparkFun-Connectors" package="USB_JUMPER" value="USB_JUMPER" x="5.08" y="-43.18"/>
+<element name="HC-06_BLUETOOTH" library="Bluetooth_HC-06" package="BT_BOARD_FOOTPRINT_STANDING" value="BLUETOOTH_BOARDSTANDING" x="-2.54" y="-35.56"/>
+<element name="C1" library="htl3r-discrete" package="C2.5-2" value="" x="-35.56" y="-81.28"/>
+<element name="C2" library="htl3r-discrete" package="C2.5-2" value="" x="-35.56" y="-86.36"/>
+<element name="R1" library="htl3r-discrete" package="R-2,5" value="100k" x="-50.8" y="-91.44"/>
+<element name="R2" library="htl3r-discrete" package="R-2,5" value="220k" x="-50.8" y="-96.52"/>
+<element name="C3" library="htl3r-discrete" package="C2.5-2" value="" x="-50.8" y="-101.6"/>
+<element name="C4" library="htl3r-discrete" package="C2.5-2" value="" x="-50.8" y="-106.68"/>
+<element name="R3" library="htl3r-discrete" package="R-2,5" value="10k" x="-50.8" y="-111.76"/>
+<element name="C5" library="htl3r-discrete" package="C2.5-2" value="" x="-50.8" y="-116.84"/>
+<element name="LED1" library="htl3r-discrete" package="LED5MM" value="" x="-50.8" y="-121.92"/>
+<element name="R4" library="htl3r-discrete" package="R-2,5" value="2k2" x="-50.8" y="-129.54"/>
+<element name="12V_PSU" library="PowerConnector" package="2PIN_CONN" value="PWR_CONNECTOR" x="-58.42" y="-129.54"/>
+<element name="5V_3V3_CONV" library="5V3_3V_stepdown" package="3P_PWR_REG" value="STEPDOWN_5V-3_3V" x="-63.5" y="-127"/>
+<element name="GESTURE_POWER" library="gestureBoardInterface_Kastl" package="POWER_CONNECTOR" value="GESTUREBOARD_POWER" x="-73.66" y="-129.54"/>
+<element name="LEDSTRIP_TOP" library="WS2812_Kastl" package="WS2812_JUMPER" value="" x="-78.74" y="-127"/>
+<element name="LEDSTRIP_MID" library="WS2812_Kastl" package="WS2812_JUMPER" value="" x="-83.82" y="-127"/>
+<element name="LEDSTRIP_DRW" library="WS2812_Kastl" package="WS2812_JUMPER" value="" x="-88.9" y="-127"/>
+<element name="Y1" library="SparkFun-FreqCtrl" package="CRYSTAL-SMD-3.2X1.5MM" value="32.768kHz" x="-109.22" y="-129.54">
+<attribute name="PROD_ID" value="XTAL-13062" x="-109.22" y="-129.54" size="1.778" layer="27" display="off"/>
 </element>
-<element name="REAL_TIME_CLOCK" library="DS3231_RTC" package="6P_HEADER" value="DS3231_RTC_MODULE" x="26.12" y="60.78" rot="R90"/>
-<element name="U$1" library="gestureBoardInterface_Kastl" package="INTERFACE_AND_POWER_CONN" value="GESTUREBOARD" x="49.14" y="33.16" rot="R90"/>
+<element name="REAL_TIME_CLOCK" library="DS3231_RTC" package="6P_HEADER" value="DS3231_RTC_MODULE" x="-127" y="-119.38"/>
+<element name="U$1" library="gestureBoardInterface_Kastl" package="INTERFACE_AND_POWER_CONN" value="GESTUREBOARD" x="-132.08" y="-121.92"/>
 </elements>
 <signals>
 <signal name="N$3">
 <contactref element="ATMEGA328P" pad="4"/>
 <contactref element="U$1" pad="GPIN1"/>
-<wire x1="41.52" y1="33.16" x2="40.64" y2="43.18" width="0.4064" layer="16"/>
+<wire x1="12.7" y1="30.48" x2="-132.08" y2="-114.3" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$4">
 <contactref element="ATMEGA328P" pad="5"/>
 <contactref element="U$1" pad="GPIN2"/>
-<wire x1="44.06" y1="33.16" x2="43.18" y2="43.18" width="0.4064" layer="16"/>
+<wire x1="15.24" y1="30.48" x2="-132.08" y2="-116.84" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$5">
 <contactref element="ATMEGA328P" pad="6"/>
 <contactref element="U$1" pad="GPIN3"/>
-<wire x1="46.6" y1="33.16" x2="45.72" y2="43.18" width="0.4064" layer="16"/>
+<wire x1="17.78" y1="30.48" x2="-132.08" y2="-119.38" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$6">
 <contactref element="ATMEGA328P" pad="23"/>
 <contactref element="U$1" pad="GPIN6"/>
-<wire x1="49.14" y1="33.16" x2="50" y2="37" width="0.4064" layer="16"/>
-<wire x1="50" y1="37" x2="50" y2="41" width="0.4064" layer="16"/>
-<wire x1="50" y1="41" x2="49" y2="47" width="0.4064" layer="16"/>
-<wire x1="49" y1="47" x2="45.72" y2="50.8" width="0.4064" layer="16"/>
+<wire x1="-132.08" y1="-121.92" x2="17.78" y2="38.1" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$7">
 <contactref element="ATMEGA328P" pad="14"/>
 <contactref element="U$1" pad="GPIN7"/>
-<wire x1="51.68" y1="33.16" x2="52" y2="48" width="0.4064" layer="16"/>
-<wire x1="52" y1="48" x2="66.04" y2="43.18" width="0.4064" layer="16"/>
+<wire x1="-132.08" y1="-124.46" x2="38.1" y2="30.48" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$1">
 <contactref element="ATMEGA328P" pad="11"/>
 <contactref element="LEDSTRIP_TOP" pad="DATA"/>
-<wire x1="58.15" y1="28.94" x2="58.42" y2="43.18" width="0.4064" layer="16"/>
+<wire x1="30.48" y1="30.48" x2="-78.74" y2="-130.81" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$2">
 <contactref element="ATMEGA328P" pad="12"/>
 <contactref element="LEDSTRIP_MID" pad="DATA"/>
-<wire x1="61.23" y1="33.02" x2="60.96" y2="43.18" width="0.4064" layer="16"/>
+<wire x1="33.02" y1="30.48" x2="-83.82" y2="-130.81" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$8">
 <contactref element="ATMEGA328P" pad="13"/>
 <contactref element="LEDSTRIP_DRW" pad="DATA"/>
-<wire x1="63.77" y1="38.1" x2="63.5" y2="43.18" width="0.4064" layer="16"/>
+<wire x1="35.56" y1="30.48" x2="-88.9" y2="-130.81" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$14">
 <contactref element="ATMEGA328P" pad="2"/>
 <contactref element="HC-06_BLUETOOTH" pad="TX"/>
-<wire x1="33.51" y1="25.47" x2="35.56" y2="43.18" width="0" layer="19" extent="1-1"/>
+<wire x1="-6.35" y1="-34.29" x2="7.62" y2="30.48" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$9">
 <contactref element="ATMEGA328P" pad="3"/>
 <contactref element="R1" pad="2"/>
-<wire x1="37.87" y1="18.82" x2="44" y2="23" width="0.4064" layer="16"/>
-<wire x1="44" y1="23" x2="40" y2="29" width="0.4064" layer="16"/>
-<wire x1="40" y1="29" x2="39" y2="36" width="0.4064" layer="16"/>
-<wire x1="39" y1="36" x2="38" y2="42" width="0.4064" layer="16"/>
-<wire x1="38" y1="42" x2="38.1" y2="43.18" width="0" layer="19" extent="1-16"/>
+<wire x1="10.16" y1="30.48" x2="-49.53" y2="-91.44" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="+12V">
 <contactref element="12V_PSU" pad="V+"/>
 <contactref element="LEDSTRIP_TOP" pad="VCC12"/>
 <contactref element="LEDSTRIP_MID" pad="VCC12"/>
 <contactref element="LEDSTRIP_DRW" pad="VCC12"/>
-<wire x1="65.77" y1="28.94" x2="68.85" y2="33.02" width="0.4064" layer="16"/>
-<wire x1="68.85" y1="33.02" x2="71.39" y2="38.1" width="0.4064" layer="16"/>
-<wire x1="73.48" y1="46.61" x2="71.39" y2="38.1" width="0.4064" layer="16"/>
+<wire x1="-83.82" y1="-123.19" x2="-88.9" y2="-123.19" width="0" layer="19" extent="1-1"/>
+<wire x1="-78.74" y1="-123.19" x2="-83.82" y2="-123.19" width="0" layer="19" extent="1-1"/>
+<wire x1="-58.42" y1="-128.27" x2="-78.74" y2="-123.19" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="+3V3">
 <contactref element="C1" pad="1"/>
@@ -675,11 +664,11 @@ design rules under a new name.</description>
 <contactref element="5V_3V3_CONV" pad="VOUT"/>
 <contactref element="GESTURE_POWER" pad="VCC3_3"/>
 <contactref element="U$1" pad="VCC_3V3"/>
-<wire x1="21.16" y1="46.12" x2="54.16" y2="26.23" width="0" layer="19" extent="1-1"/>
-<wire x1="24.28" y1="46.57" x2="21.16" y2="46.12" width="0" layer="19" extent="1-1"/>
-<wire x1="29.72" y1="35.35" x2="24.28" y2="46.57" width="0" layer="19" extent="1-1"/>
-<wire x1="28.43" y1="25.47" x2="29.72" y2="35.35" width="0" layer="19" extent="1-1"/>
-<wire x1="54.22" y1="33.16" x2="54.16" y2="26.23" width="0" layer="19" extent="1-1"/>
+<wire x1="-63.5" y1="-127" x2="-73.66" y2="-128.27" width="0" layer="19" extent="1-1"/>
+<wire x1="-36.83" y1="-86.36" x2="-63.5" y2="-127" width="0" layer="19" extent="1-1"/>
+<wire x1="-36.83" y1="-81.28" x2="-36.83" y2="-86.36" width="0" layer="19" extent="1-1"/>
+<wire x1="-6.35" y1="-39.37" x2="-36.83" y2="-81.28" width="0" layer="19" extent="1-1"/>
+<wire x1="-132.08" y1="-127" x2="-73.66" y2="-128.27" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="GND">
 <contactref element="C1" pad="2"/>
@@ -706,30 +695,29 @@ design rules under a new name.</description>
 <contactref element="Y1" pad="P$2"/>
 <contactref element="REAL_TIME_CLOCK" pad="GND"/>
 <contactref element="U$1" pad="GND"/>
-<wire x1="66.31" y1="38.1" x2="63.77" y2="33.02" width="0.4064" layer="16"/>
-<wire x1="60.69" y1="28.94" x2="63.23" y2="28.94" width="0.4064" layer="16"/>
-<wire x1="63.23" y1="28.94" x2="63.77" y2="33.02" width="0.4064" layer="16"/>
-<wire x1="63.77" y1="33.02" x2="66.31" y2="33.02" width="0.4064" layer="16"/>
-<wire x1="66.31" y1="38.1" x2="68.85" y2="38.1" width="0.4064" layer="16"/>
-<wire x1="73.48" y1="49.15" x2="66.04" y2="70.07" width="0.4064" layer="16"/>
-<wire x1="47.07" y1="69.84" x2="49" y2="74" width="0.4064" layer="16"/>
-<wire x1="49" y1="74" x2="66.04" y2="70.07" width="0.4064" layer="16" curve="-226.837475"/>
-<wire x1="29.05" y1="18.9" x2="30.97" y2="25.47" width="0.4064" layer="16"/>
-<wire x1="50.84" y1="56.23" x2="53.92" y2="56.23" width="0.4064" layer="16"/>
-<wire x1="48.39" y1="56.08" x2="50.84" y2="56.23" width="0.4064" layer="16"/>
-<wire x1="48.39" y1="56.08" x2="48.26" y2="50.8" width="0.4064" layer="16"/>
-<wire x1="46.09" y1="62.02" x2="47.07" y2="69.84" width="0" layer="19" extent="1-1"/>
-<wire x1="48.39" y1="56.08" x2="46.09" y2="62.02" width="0" layer="19" extent="1-1"/>
-<wire x1="50.8" y1="43.18" x2="48.26" y2="50.8" width="0" layer="19" extent="1-1"/>
-<wire x1="38.64" y1="68.05" x2="49" y2="74" width="0" layer="19" extent="1-16"/>
-<wire x1="32.47" y1="60.78" x2="38.64" y2="68.05" width="0" layer="19" extent="1-1"/>
-<wire x1="56.76" y1="33.16" x2="50.8" y2="43.18" width="0" layer="19" extent="1-1"/>
-<wire x1="60.69" y1="28.94" x2="56.76" y2="33.16" width="0" layer="19" extent="1-1"/>
-<wire x1="24.28" y1="44.03" x2="32.47" y2="60.78" width="0" layer="19" extent="1-1"/>
-<wire x1="21.16" y1="43.58" x2="24.28" y2="44.03" width="0" layer="19" extent="1-1"/>
-<wire x1="54.16" y1="23.69" x2="24.28" y2="44.03" width="0" layer="19" extent="1-1"/>
-<wire x1="29.72" y1="37.89" x2="54.16" y2="23.69" width="0" layer="19" extent="1-1"/>
-<wire x1="30.97" y1="25.47" x2="29.72" y2="37.89" width="0" layer="19" extent="1-1"/>
+<wire x1="-132.08" y1="-129.54" x2="-127" y2="-125.73" width="0" layer="19" extent="1-1"/>
+<wire x1="-107.97" y1="-129.54" x2="-127" y2="-125.73" width="0" layer="19" extent="1-1"/>
+<wire x1="-88.9" y1="-128.27" x2="-107.97" y2="-129.54" width="0" layer="19" extent="1-1"/>
+<wire x1="-88.9" y1="-125.73" x2="-88.9" y2="-128.27" width="0" layer="19" extent="1-1"/>
+<wire x1="-83.82" y1="-128.27" x2="-88.9" y2="-128.27" width="0" layer="19" extent="1-1"/>
+<wire x1="-83.82" y1="-125.73" x2="-83.82" y2="-128.27" width="0" layer="19" extent="1-1"/>
+<wire x1="-78.74" y1="-128.27" x2="-83.82" y2="-128.27" width="0" layer="19" extent="1-1"/>
+<wire x1="-78.74" y1="-125.73" x2="-78.74" y2="-128.27" width="0" layer="19" extent="1-1"/>
+<wire x1="-73.66" y1="-130.81" x2="-78.74" y2="-128.27" width="0" layer="19" extent="1-1"/>
+<wire x1="-63.5" y1="-129.54" x2="-73.66" y2="-130.81" width="0" layer="19" extent="1-1"/>
+<wire x1="-58.42" y1="-130.81" x2="-63.5" y2="-129.54" width="0" layer="19" extent="1-1"/>
+<wire x1="-49.53" y1="-121.92" x2="-58.42" y2="-130.81" width="0" layer="19" extent="1-1"/>
+<wire x1="-49.53" y1="-116.84" x2="-49.53" y2="-121.92" width="0" layer="19" extent="1-1"/>
+<wire x1="-49.53" y1="-106.68" x2="-49.53" y2="-116.84" width="0" layer="19" extent="1-1"/>
+<wire x1="-49.53" y1="-101.6" x2="-49.53" y2="-106.68" width="0" layer="19" extent="1-1"/>
+<wire x1="-52.07" y1="-96.52" x2="-49.53" y2="-101.6" width="0" layer="19" extent="1-1"/>
+<wire x1="-34.29" y1="-86.36" x2="-52.07" y2="-96.52" width="0" layer="19" extent="1-1"/>
+<wire x1="-34.29" y1="-81.28" x2="-34.29" y2="-86.36" width="0" layer="19" extent="1-1"/>
+<wire x1="-6.35" y1="-36.83" x2="-34.29" y2="-81.28" width="0" layer="19" extent="1-1"/>
+<wire x1="8.89" y1="-43.18" x2="-6.35" y2="-36.83" width="0" layer="19" extent="1-1"/>
+<wire x1="22.86" y1="30.48" x2="-6.35" y2="-36.83" width="0" layer="19" extent="1-1"/>
+<wire x1="20.32" y1="38.1" x2="22.86" y2="30.48" width="0" layer="19" extent="1-1"/>
+<wire x1="53.34" y1="39.37" x2="22.86" y2="30.48" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="+5V">
 <contactref element="PW_REG_5V" pad="VBUS"/>
@@ -743,54 +731,48 @@ design rules under a new name.</description>
 <contactref element="C5" pad="1"/>
 <contactref element="5V_3V3_CONV" pad="VIN"/>
 <contactref element="REAL_TIME_CLOCK" pad="VCC"/>
-<wire x1="54.69" y1="69.84" x2="58.42" y2="70.07" width="0.4064" layer="16"/>
-<wire x1="53.92" y1="53.69" x2="53.34" y2="50.8" width="0.4064" layer="16"/>
-<wire x1="50.84" y1="53.69" x2="50.8" y2="50.8" width="0.4064" layer="16"/>
-<wire x1="45.85" y1="56.08" x2="43.79148125" y2="56.03279375" width="0.4064" layer="16"/>
-<wire x1="43.79148125" y1="56.03279375" x2="45" y2="48" width="0.4064" layer="16"/>
-<wire x1="45" y1="48" x2="48.26" y2="43.18" width="0.4064" layer="16"/>
-<wire x1="29.93" y1="60.78" x2="32" y2="64" width="0.4064" layer="16"/>
-<wire x1="32" y1="64" x2="36" y2="64" width="0.4064" layer="16"/>
-<wire x1="36" y1="64" x2="40" y2="63" width="0.4064" layer="16"/>
-<wire x1="40" y1="63" x2="43.79148125" y2="56.03279375" width="0.4064" layer="16"/>
-<wire x1="53.92" y1="53.69" x2="54.69" y2="69.84" width="0" layer="19" extent="1-1"/>
-<wire x1="50.8" y1="50.8" x2="53.34" y2="50.8" width="0" layer="19" extent="1-1"/>
-<wire x1="45.85" y1="56.08" x2="50.84" y2="53.69" width="0" layer="19" extent="1-1"/>
-<wire x1="21.16" y1="48.66" x2="29.93" y2="60.78" width="0" layer="19" extent="1-1"/>
-<wire x1="36.08" y1="34.15" x2="48.26" y2="43.18" width="0" layer="19" extent="1-1"/>
+<wire x1="-63.5" y1="-124.46" x2="-127" y2="-123.19" width="0" layer="19" extent="1-1"/>
+<wire x1="-52.07" y1="-116.84" x2="-63.5" y2="-124.46" width="0" layer="19" extent="1-1"/>
+<wire x1="-49.53" y1="-111.76" x2="-52.07" y2="-116.84" width="0" layer="19" extent="1-1"/>
+<wire x1="-52.07" y1="-106.68" x2="-49.53" y2="-111.76" width="0" layer="19" extent="1-1"/>
+<wire x1="-52.07" y1="-101.6" x2="-52.07" y2="-106.68" width="0" layer="19" extent="1-1"/>
+<wire x1="1.27" y1="-43.18" x2="-52.07" y2="-101.6" width="0" layer="19" extent="1-1"/>
+<wire x1="20.32" y1="30.48" x2="1.27" y2="-43.18" width="0" layer="19" extent="1-1"/>
+<wire x1="22.86" y1="38.1" x2="20.32" y2="30.48" width="0" layer="19" extent="1-1"/>
+<wire x1="25.4" y1="38.1" x2="22.86" y2="38.1" width="0" layer="19" extent="1-1"/>
+<wire x1="45.72" y1="39.37" x2="25.4" y2="38.1" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$16">
 <contactref element="R2" pad="2"/>
 <contactref element="R1" pad="1"/>
 <contactref element="HC-06_BLUETOOTH" pad="RX"/>
-<wire x1="31.59" y1="18.9" x2="35.33" y2="18.82" width="0.4064" layer="16"/>
-<wire x1="35.33" y1="18.82" x2="36.05" y2="25.47" width="0.4064" layer="16"/>
+<wire x1="-52.07" y1="-91.44" x2="-49.53" y2="-96.52" width="0" layer="19" extent="1-1"/>
+<wire x1="-6.35" y1="-31.75" x2="-52.07" y2="-91.44" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$12">
 <contactref element="ATMEGA328P" pad="1"/>
 <contactref element="R3" pad="1"/>
-<wire x1="33.02" y1="43.18" x2="36.08" y2="31.61" width="0" layer="19" extent="1-1"/>
+<wire x1="5.08" y1="30.48" x2="-52.07" y2="-111.76" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$10">
 <contactref element="LED1" pad="A"/>
 <contactref element="R4" pad="1"/>
-<wire x1="43.55" y1="62.02" x2="39.93" y2="58.02" width="0" layer="19" extent="1-1"/>
+<wire x1="-52.07" y1="-121.92" x2="-52.07" y2="-129.54" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$11">
 <contactref element="Y1" pad="P$1"/>
 <contactref element="REAL_TIME_CLOCK" pad="OSC"/>
-<wire x1="19.77" y1="60.78" x2="38.64" y2="70.55" width="0.4064" layer="16"/>
-<wire x1="38.64" y1="70.55" x2="38.64" y2="70.55" width="0" layer="19" extent="1-16"/>
+<wire x1="-127" y1="-113.03" x2="-110.47" y2="-129.54" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$13">
 <contactref element="ATMEGA328P" pad="27"/>
 <contactref element="REAL_TIME_CLOCK" pad="SDA"/>
-<wire x1="27.39" y1="60.78" x2="35.56" y2="50.8" width="0.4064" layer="16"/>
+<wire x1="7.62" y1="38.1" x2="-127" y2="-120.65" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$15">
 <contactref element="ATMEGA328P" pad="28"/>
 <contactref element="REAL_TIME_CLOCK" pad="SCL"/>
-<wire x1="24.85" y1="60.78" x2="33.02" y2="50.8" width="0.4064" layer="16"/>
+<wire x1="5.08" y1="38.1" x2="-127" y2="-118.11" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>
