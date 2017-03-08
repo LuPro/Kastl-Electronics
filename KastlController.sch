@@ -3832,6 +3832,54 @@ Source: 008-0260-0_E.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="wirepad">
+<description>&lt;b&gt;Single Pads&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="1,6/0,9">
+<description>&lt;b&gt;THROUGH-HOLE PAD&lt;/b&gt;</description>
+<wire x1="-0.508" y1="0.762" x2="-0.762" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="-0.762" y1="0.762" x2="-0.762" y2="0.508" width="0.1524" layer="21"/>
+<wire x1="-0.762" y1="-0.508" x2="-0.762" y2="-0.762" width="0.1524" layer="21"/>
+<wire x1="-0.762" y1="-0.762" x2="-0.508" y2="-0.762" width="0.1524" layer="21"/>
+<wire x1="0.508" y1="-0.762" x2="0.762" y2="-0.762" width="0.1524" layer="21"/>
+<wire x1="0.762" y1="-0.762" x2="0.762" y2="-0.508" width="0.1524" layer="21"/>
+<wire x1="0.762" y1="0.508" x2="0.762" y2="0.762" width="0.1524" layer="21"/>
+<wire x1="0.762" y1="0.762" x2="0.508" y2="0.762" width="0.1524" layer="21"/>
+<circle x="0" y="0" radius="0.635" width="0.1524" layer="51"/>
+<pad name="1" x="0" y="0" drill="0.9144" diameter="1.6002" shape="octagon"/>
+<text x="-0.762" y="1.016" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="0" y="0.6" size="0.0254" layer="27">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="PAD">
+<wire x1="-1.016" y1="1.016" x2="1.016" y2="-1.016" width="0.254" layer="94"/>
+<wire x1="-1.016" y1="-1.016" x2="1.016" y2="1.016" width="0.254" layer="94"/>
+<text x="-1.143" y="1.8542" size="1.778" layer="95">&gt;NAME</text>
+<text x="-1.143" y="-3.302" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="P" x="2.54" y="0" visible="off" length="short" direction="pas" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="1,6/0,9" prefix="PAD" uservalue="yes">
+<description>&lt;b&gt;THROUGH-HOLE PAD&lt;/b&gt;</description>
+<gates>
+<gate name="1" symbol="PAD" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="1,6/0,9">
+<connects>
+<connect gate="1" pin="P" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -3903,6 +3951,9 @@ Source: 008-0260-0_E.pdf</description>
 <part name="C1" library="htl3r-discrete" deviceset="C-EU_" device="025-024X044"/>
 <part name="C2" library="htl3r-discrete" deviceset="C-EU_" device="025-024X044"/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
+<part name="PIEZO+" library="wirepad" deviceset="1,6/0,9" device=""/>
+<part name="PIEZO-" library="wirepad" deviceset="1,6/0,9" device=""/>
+<part name="GND17" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -3966,6 +4017,9 @@ Source: 008-0260-0_E.pdf</description>
 <instance part="C1" gate="G$1" x="-20.32" y="114.3" rot="MR270"/>
 <instance part="C2" gate="G$1" x="-20.32" y="101.6" rot="MR270"/>
 <instance part="GND13" gate="1" x="-25.4" y="88.9"/>
+<instance part="PIEZO+" gate="1" x="81.28" y="17.78" rot="MR0"/>
+<instance part="PIEZO-" gate="1" x="81.28" y="15.24" rot="R180"/>
+<instance part="GND17" gate="1" x="76.2" y="10.16"/>
 </instances>
 <busses>
 </busses>
@@ -4211,6 +4265,12 @@ Source: 008-0260-0_E.pdf</description>
 <junction x="-25.4" y="101.6"/>
 <pinref part="GND13" gate="1" pin="GND"/>
 </segment>
+<segment>
+<pinref part="PIEZO-" gate="1" pin="P"/>
+<pinref part="GND17" gate="1" pin="GND"/>
+<wire x1="78.74" y1="15.24" x2="76.2" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="15.24" x2="76.2" y2="12.7" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="+5V" class="0">
 <segment>
@@ -4379,6 +4439,13 @@ Source: 008-0260-0_E.pdf</description>
 <pinref part="ATMEGA328P" gate="G$1" pin="PB6(XTAL1/TOSC1)"/>
 <wire x1="10.16" y1="40.64" x2="7.62" y2="40.64" width="0.1524" layer="91"/>
 <label x="7.62" y="40.64" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="N$12" class="0">
+<segment>
+<pinref part="PIEZO+" gate="1" pin="P"/>
+<pinref part="ATMEGA328P" gate="G$1" pin="PB1(OC1A)"/>
+<wire x1="78.74" y1="17.78" x2="58.42" y2="17.78" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
