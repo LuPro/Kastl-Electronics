@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<<<<<<< HEAD
 <eagle version="7.4.0">
-=======
-<eagle version="7.5.0">
->>>>>>> origin/master
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -3786,6 +3782,56 @@ Source: 008-0260-0_E.pdf</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="IPI">
+<packages>
+<package name="6PIN_HEADER">
+<pad name="MISO" x="-1.27" y="2.54" drill="0.8" shape="octagon"/>
+<pad name="VCC" x="1.27" y="2.54" drill="0.8" shape="octagon"/>
+<pad name="MOSI" x="1.27" y="0" drill="0.8" shape="octagon"/>
+<pad name="SCK" x="-1.27" y="0" drill="0.8" shape="octagon"/>
+<pad name="RST" x="-1.27" y="-2.54" drill="0.8" shape="octagon"/>
+<pad name="GND" x="1.27" y="-2.54" drill="0.8" shape="octagon"/>
+<wire x1="2.54" y1="3.4925" x2="1.905" y2="3.4925" width="0.127" layer="17"/>
+<wire x1="2.2225" y1="3.81" x2="2.2225" y2="3.175" width="0.127" layer="17"/>
+</package>
+</packages>
+<symbols>
+<symbol name="IPI">
+<pin name="VCC" x="5.08" y="15.24" length="middle" rot="R270"/>
+<pin name="GND" x="5.08" y="-12.7" length="middle" rot="R90"/>
+<pin name="MISO" x="-10.16" y="5.08" length="middle"/>
+<pin name="MOSI" x="-10.16" y="2.54" length="middle"/>
+<pin name="SCK" x="-10.16" y="0" length="middle"/>
+<pin name="RST" x="-10.16" y="-2.54" length="middle"/>
+<wire x1="-5.08" y1="10.16" x2="-5.08" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-7.62" x2="7.62" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-7.62" x2="7.62" y2="10.16" width="0.254" layer="94"/>
+<wire x1="7.62" y1="10.16" x2="-5.08" y2="10.16" width="0.254" layer="94"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="INTEGRATED_PROGRAMMING_INTERFACE">
+<gates>
+<gate name="G$1" symbol="IPI" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="6PIN_HEADER">
+<connects>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="MISO" pad="MISO"/>
+<connect gate="G$1" pin="MOSI" pad="MOSI"/>
+<connect gate="G$1" pin="RST" pad="RST"/>
+<connect gate="G$1" pin="SCK" pad="SCK"/>
+<connect gate="G$1" pin="VCC" pad="VCC"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -3851,6 +3897,12 @@ Source: 008-0260-0_E.pdf</description>
 <part name="5V-&gt;3V3" library="Voltage_Regulators" deviceset="VOLTAGE_REG_5V_3V3" device=""/>
 <part name="12V-&gt;5V" library="Voltage_Regulators" deviceset="VOLTAGE_REG_12V_5V" device=""/>
 <part name="QUARTZ_OSC" library="crystal" deviceset="CRYSTAL" device="HC33U-V" value="16MHz"/>
+<part name="U$1" library="IPI" deviceset="INTEGRATED_PROGRAMMING_INTERFACE" device=""/>
+<part name="GND5" library="supply1" deviceset="GND" device=""/>
+<part name="P+9" library="supply1" deviceset="+5V" device=""/>
+<part name="C1" library="htl3r-discrete" deviceset="C-EU_" device="025-024X044"/>
+<part name="C2" library="htl3r-discrete" deviceset="C-EU_" device="025-024X044"/>
+<part name="GND13" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -3907,7 +3959,13 @@ Source: 008-0260-0_E.pdf</description>
 <instance part="P+13" gate="1" x="-43.18" y="78.74"/>
 <instance part="5V-&gt;3V3" gate="G$1" x="-60.96" y="25.4"/>
 <instance part="12V-&gt;5V" gate="G$1" x="-60.96" y="73.66"/>
-<instance part="QUARTZ_OSC" gate="G$1" x="-7.62" y="116.84"/>
+<instance part="QUARTZ_OSC" gate="G$1" x="-2.54" y="109.22" rot="R270"/>
+<instance part="U$1" gate="G$1" x="35.56" y="-22.86" rot="MR0"/>
+<instance part="GND5" gate="1" x="30.48" y="-40.64"/>
+<instance part="P+9" gate="1" x="30.48" y="-2.54"/>
+<instance part="C1" gate="G$1" x="-20.32" y="114.3" rot="MR270"/>
+<instance part="C2" gate="G$1" x="-20.32" y="101.6" rot="MR270"/>
+<instance part="GND13" gate="1" x="-25.4" y="88.9"/>
 </instances>
 <busses>
 </busses>
@@ -4138,6 +4196,21 @@ Source: 008-0260-0_E.pdf</description>
 <wire x1="-60.96" y1="10.16" x2="-60.96" y2="7.62" width="0.1524" layer="91"/>
 <pinref part="5V-&gt;3V3" gate="G$1" pin="GND"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="GND"/>
+<pinref part="GND5" gate="1" pin="GND"/>
+<wire x1="30.48" y1="-38.1" x2="30.48" y2="-35.56" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="C1" gate="G$1" pin="1"/>
+<wire x1="-22.86" y1="114.3" x2="-25.4" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="-25.4" y1="114.3" x2="-25.4" y2="101.6" width="0.1524" layer="91"/>
+<pinref part="C2" gate="G$1" pin="1"/>
+<wire x1="-25.4" y1="101.6" x2="-25.4" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="-22.86" y1="101.6" x2="-25.4" y2="101.6" width="0.1524" layer="91"/>
+<junction x="-25.4" y="101.6"/>
+<pinref part="GND13" gate="1" pin="GND"/>
+</segment>
 </net>
 <net name="+5V" class="0">
 <segment>
@@ -4191,6 +4264,11 @@ Source: 008-0260-0_E.pdf</description>
 <pinref part="P+13" gate="1" pin="+5V"/>
 <pinref part="12V-&gt;5V" gate="G$1" pin="5V"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="VCC"/>
+<pinref part="P+9" gate="1" pin="+5V"/>
+<wire x1="30.48" y1="-5.08" x2="30.48" y2="-7.62" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="N$16" class="0">
 <segment>
@@ -4205,12 +4283,18 @@ Source: 008-0260-0_E.pdf</description>
 <wire x1="93.98" y1="-15.24" x2="104.14" y2="-15.24" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$12" class="0">
+<net name="RST" class="0">
 <segment>
 <pinref part="ATMEGA328P" gate="G$1" pin="PC6(/RESET)"/>
 <wire x1="10.16" y1="66.04" x2="2.54" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="2.54" y1="66.04" x2="2.54" y2="68.58" width="0.1524" layer="91"/>
 <pinref part="R3" gate="G$1" pin="1"/>
+<label x="2.54" y="66.04" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="RST"/>
+<wire x1="45.72" y1="-25.4" x2="48.26" y2="-25.4" width="0.1524" layer="91"/>
+<label x="48.26" y="-25.4" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$10" class="0">
@@ -4236,6 +4320,65 @@ Source: 008-0260-0_E.pdf</description>
 <wire x1="73.66" y1="53.34" x2="73.66" y2="99.06" width="0.1524" layer="91"/>
 <wire x1="73.66" y1="99.06" x2="78.74" y2="99.06" width="0.1524" layer="91"/>
 <pinref part="REAL_TIME_CLOCK" gate="G$1" pin="SCL"/>
+</segment>
+</net>
+<net name="N$11" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="MISO"/>
+<wire x1="45.72" y1="-17.78" x2="63.5" y2="-17.78" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="-17.78" x2="63.5" y2="10.16" width="0.1524" layer="91"/>
+<pinref part="ATMEGA328P" gate="G$1" pin="PB4(MISO)"/>
+<wire x1="63.5" y1="10.16" x2="58.42" y2="10.16" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$17" class="0">
+<segment>
+<pinref part="U$1" gate="G$1" pin="MOSI"/>
+<wire x1="45.72" y1="-20.32" x2="66.04" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="-20.32" x2="66.04" y2="12.7" width="0.1524" layer="91"/>
+<pinref part="ATMEGA328P" gate="G$1" pin="PB3(MOSI/OC2)"/>
+<wire x1="66.04" y1="12.7" x2="58.42" y2="12.7" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$18" class="0">
+<segment>
+<pinref part="ATMEGA328P" gate="G$1" pin="PB5(SCK)"/>
+<wire x1="58.42" y1="7.62" x2="60.96" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="7.62" x2="60.96" y2="-22.86" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="SCK"/>
+<wire x1="60.96" y1="-22.86" x2="45.72" y2="-22.86" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="XTAL2" class="0">
+<segment>
+<pinref part="C1" gate="G$1" pin="2"/>
+<wire x1="-15.24" y1="114.3" x2="-2.54" y2="114.3" width="0.1524" layer="91"/>
+<pinref part="QUARTZ_OSC" gate="G$1" pin="1"/>
+<wire x1="-2.54" y1="114.3" x2="5.08" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="-2.54" y1="111.76" x2="-2.54" y2="114.3" width="0.1524" layer="91"/>
+<junction x="-2.54" y="114.3"/>
+<label x="5.08" y="114.3" size="1.778" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="ATMEGA328P" gate="G$1" pin="PB7(XTAL2/TOSC2)"/>
+<wire x1="10.16" y1="35.56" x2="7.62" y2="35.56" width="0.1524" layer="91"/>
+<label x="7.62" y="35.56" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="XTAL1" class="0">
+<segment>
+<pinref part="C2" gate="G$1" pin="2"/>
+<wire x1="-15.24" y1="101.6" x2="-2.54" y2="101.6" width="0.1524" layer="91"/>
+<pinref part="QUARTZ_OSC" gate="G$1" pin="2"/>
+<wire x1="-2.54" y1="101.6" x2="5.08" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="-2.54" y1="106.68" x2="-2.54" y2="101.6" width="0.1524" layer="91"/>
+<junction x="-2.54" y="101.6"/>
+<label x="5.08" y="101.6" size="1.778" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="ATMEGA328P" gate="G$1" pin="PB6(XTAL1/TOSC1)"/>
+<wire x1="10.16" y1="40.64" x2="7.62" y2="40.64" width="0.1524" layer="91"/>
+<label x="7.62" y="40.64" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 </nets>
